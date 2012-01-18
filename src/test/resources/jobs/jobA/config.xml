@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+	<actions />
+	<description></description>
+	<keepDependencies>false</keepDependencies>
+	<properties />
+	<scm class="hudson.scm.NullSCM" />
+	<canRoam>true</canRoam>
+	<disabled>false</disabled>
+	<blockBuildWhenDownstreamBuilding>false
+	</blockBuildWhenDownstreamBuilding>
+	<blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+	<triggers class="vector" />
+	<concurrentBuild>false</concurrentBuild>
+	<builders />
+	<publishers>
+		<hudson.tasks.Mailer>
+			<recipients>frederik.fromm@gmail.com</recipients>
+			<dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+			<sendToIndividuals>false</sendToIndividuals>
+		</hudson.tasks.Mailer>
+
+		<hudson.plugins.emailext.ExtendedEmailPublisher>
+			<recipientList></recipientList>
+			<configuredTriggers>
+				<hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+					<email>
+						<recipientList>recipientList01@mail.com</recipientList>
+						<subject>$PROJECT_DEFAULT_SUBJECT</subject>
+						<body>$PROJECT_DEFAULT_CONTENT</body>
+						<sendToDevelopers>true</sendToDevelopers>
+						<sendToRequester>false</sendToRequester>
+						<includeCulprits>true</includeCulprits>
+						<sendToRecipientList>true</sendToRecipientList>
+					</email>
+				</hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+				<hudson.plugins.emailext.plugins.trigger.StillFailingTrigger>
+					<email>
+						<recipientList>recipientList02@mail.com</recipientList>
+						<subject>$PROJECT_DEFAULT_SUBJECT</subject>
+						<body>$PROJECT_DEFAULT_CONTENT</body>
+						<sendToDevelopers>true</sendToDevelopers>
+						<sendToRequester>false</sendToRequester>
+						<includeCulprits>true</includeCulprits>
+						<sendToRecipientList>true</sendToRecipientList>
+					</email>
+				</hudson.plugins.emailext.plugins.trigger.StillFailingTrigger>
+				<hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+					<email>
+						<recipientList>recipientList03@mail.com</recipientList>
+						<subject>$PROJECT_DEFAULT_SUBJECT</subject>
+						<body>$PROJECT_DEFAULT_CONTENT</body>
+						<sendToDevelopers>true</sendToDevelopers>
+						<sendToRequester>false</sendToRequester>
+						<includeCulprits>true</includeCulprits>
+						<sendToRecipientList>true</sendToRecipientList>
+					</email>
+				</hudson.plugins.emailext.plugins.trigger.FixedTrigger>
+			</configuredTriggers>
+			<contentType>default</contentType>
+			<defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
+			<defaultContent>$DEFAULT_CONTENT</defaultContent>
+		</hudson.plugins.emailext.ExtendedEmailPublisher>
+	</publishers>
+	<buildWrappers />
+</project>

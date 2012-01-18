@@ -1,0 +1,12 @@
+<root>
+  <sub att="pos1">
+    <value key="value">
+      <content>CCC</content>
+    </value>
+  </sub>
+  <sub att="pos2">
+      <value key="value">
+      <content>DDD</content>
+    </value>
+  </sub>
+</root>
